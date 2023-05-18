@@ -28,7 +28,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: java-app
-          path: '${{ github.workspace }}/demo8/target/*.war'
+          path: '${{ github.workspace }}/demo8/target/*.jar'
 
   deploy:
     runs-on: ubuntu-latest
@@ -50,4 +50,4 @@ jobs:
           app-name: 'SpringBootPracticasDespliegue'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C26055C183B34ED78DD700F57DEEB4F0 }}
-          package: '*.war'
+          package: '*.jar'
